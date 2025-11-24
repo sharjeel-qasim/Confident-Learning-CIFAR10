@@ -1,0 +1,25 @@
+--- Starting Training: M1_baseline_0p (Type: baseline, Noise: 0%) ---
+Training on 50000 examples.
+Epoch  10 -> Test Accuracy: 78.520%
+NEW BEST -> 78.520% - Model saved!
+Epoch  20 -> Test Accuracy: 82.720%
+NEW BEST -> 82.720% - Model saved!
+Epoch  30 -> Test Accuracy: 86.940%
+NEW BEST -> 86.940% - Model saved!
+Epoch  40 -> Test Accuracy: 86.050%
+Epoch  50 -> Test Accuracy: 89.190%
+NEW BEST -> 89.190% - Model saved!
+Epoch  60 -> Test Accuracy: 89.910%
+NEW BEST -> 89.910% - Model saved!
+Epoch  70 -> Test Accuracy: 91.700%
+NEW BEST -> 91.700% - Model saved!
+Epoch  80 -> Test Accuracy: 93.910%
+NEW BEST -> 93.910% - Model saved!
+Epoch  90 -> Test Accuracy: 94.610%
+NEW BEST -> 94.610% - Model saved!
+Epoch 100 -> Test Accuracy: 94.690%
+NEW BEST -> 94.690% - Model saved!
+
+============================================================
+FINAL RESULT: M1_baseline_0p Best Test Accuracy: 94.690%
+============================================================

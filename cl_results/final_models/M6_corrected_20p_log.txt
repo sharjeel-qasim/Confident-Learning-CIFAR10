@@ -1,0 +1,23 @@
+--- Starting Training: M6_corrected_20p (Type: corrected, Noise: 20%) ---
+Training on 50000 examples.
+Epoch  10 -> Test Accuracy: 82.150%
+NEW BEST -> 82.150% - Model saved!
+Epoch  20 -> Test Accuracy: 78.480%
+Epoch  30 -> Test Accuracy: 82.480%
+NEW BEST -> 82.480% - Model saved!
+Epoch  40 -> Test Accuracy: 79.130%
+Epoch  50 -> Test Accuracy: 83.120%
+NEW BEST -> 83.120% - Model saved!
+Epoch  60 -> Test Accuracy: 83.930%
+NEW BEST -> 83.930% - Model saved!
+Epoch  70 -> Test Accuracy: 84.970%
+NEW BEST -> 84.970% - Model saved!
+Epoch  80 -> Test Accuracy: 86.500%
+NEW BEST -> 86.500% - Model saved!
+Epoch  90 -> Test Accuracy: 87.130%
+NEW BEST -> 87.130% - Model saved!
+Epoch 100 -> Test Accuracy: 87.090%
+
+============================================================
+FINAL RESULT: M6_corrected_20p Best Test Accuracy: 87.130%
+============================================================

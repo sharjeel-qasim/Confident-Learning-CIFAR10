@@ -1,0 +1,25 @@
+--- Starting Training: M2_pruned_0p (Type: pruned, Noise: 0%) ---
+Training on 50000 examples.
+Epoch  10 -> Test Accuracy: 78.530%
+NEW BEST -> 78.530% - Model saved!
+Epoch  20 -> Test Accuracy: 81.190%
+NEW BEST -> 81.190% - Model saved!
+Epoch  30 -> Test Accuracy: 84.900%
+NEW BEST -> 84.900% - Model saved!
+Epoch  40 -> Test Accuracy: 87.240%
+NEW BEST -> 87.240% - Model saved!
+Epoch  50 -> Test Accuracy: 87.350%
+NEW BEST -> 87.350% - Model saved!
+Epoch  60 -> Test Accuracy: 91.290%
+NEW BEST -> 91.290% - Model saved!
+Epoch  70 -> Test Accuracy: 92.500%
+NEW BEST -> 92.500% - Model saved!
+Epoch  80 -> Test Accuracy: 93.850%
+NEW BEST -> 93.850% - Model saved!
+Epoch  90 -> Test Accuracy: 94.900%
+NEW BEST -> 94.900% - Model saved!
+Epoch 100 -> Test Accuracy: 94.790%
+
+============================================================
+FINAL RESULT: M2_pruned_0p Best Test Accuracy: 94.900%
+============================================================

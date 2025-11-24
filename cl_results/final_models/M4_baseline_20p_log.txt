@@ -1,0 +1,21 @@
+--- Starting Training: M4_baseline_20p (Type: baseline, Noise: 20%) ---
+Training on 50000 examples.
+Epoch  10 -> Test Accuracy: 81.740%
+NEW BEST -> 81.740% - Model saved!
+Epoch  20 -> Test Accuracy: 78.550%
+Epoch  30 -> Test Accuracy: 86.810%
+NEW BEST -> 86.810% - Model saved!
+Epoch  40 -> Test Accuracy: 86.700%
+Epoch  50 -> Test Accuracy: 86.310%
+Epoch  60 -> Test Accuracy: 89.250%
+NEW BEST -> 89.250% - Model saved!
+Epoch  70 -> Test Accuracy: 91.440%
+NEW BEST -> 91.440% - Model saved!
+Epoch  80 -> Test Accuracy: 89.790%
+Epoch  90 -> Test Accuracy: 92.070%
+NEW BEST -> 92.070% - Model saved!
+Epoch 100 -> Test Accuracy: 92.000%
+
+============================================================
+FINAL RESULT: M4_baseline_20p Best Test Accuracy: 92.070%
+============================================================

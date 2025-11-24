@@ -1,0 +1,26 @@
+--- Starting Training: M3_corrected_0p (Type: corrected, Noise: 0%) ---
+Training on 50000 examples.
+Epoch  10 -> Test Accuracy: 80.830%
+NEW BEST -> 80.830% - Model saved!
+Epoch  20 -> Test Accuracy: 85.400%
+NEW BEST -> 85.400% - Model saved!
+Epoch  30 -> Test Accuracy: 86.230%
+NEW BEST -> 86.230% - Model saved!
+Epoch  40 -> Test Accuracy: 89.350%
+NEW BEST -> 89.350% - Model saved!
+Epoch  50 -> Test Accuracy: 89.470%
+NEW BEST -> 89.470% - Model saved!
+Epoch  60 -> Test Accuracy: 90.790%
+NEW BEST -> 90.790% - Model saved!
+Epoch  70 -> Test Accuracy: 92.300%
+NEW BEST -> 92.300% - Model saved!
+Epoch  80 -> Test Accuracy: 94.320%
+NEW BEST -> 94.320% - Model saved!
+Epoch  90 -> Test Accuracy: 94.830%
+NEW BEST -> 94.830% - Model saved!
+Epoch 100 -> Test Accuracy: 94.860%
+NEW BEST -> 94.860% - Model saved!
+
+============================================================
+FINAL RESULT: M3_corrected_0p Best Test Accuracy: 94.860%
+============================================================

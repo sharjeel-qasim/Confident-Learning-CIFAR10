@@ -1,0 +1,24 @@
+--- Starting Training: M5_pruned_20p (Type: pruned, Noise: 20%) ---
+Training on 43273 examples.
+Epoch  10 -> Test Accuracy: 77.690%
+NEW BEST -> 77.690% - Model saved!
+Epoch  20 -> Test Accuracy: 83.270%
+NEW BEST -> 83.270% - Model saved!
+Epoch  30 -> Test Accuracy: 75.570%
+Epoch  40 -> Test Accuracy: 84.900%
+NEW BEST -> 84.900% - Model saved!
+Epoch  50 -> Test Accuracy: 72.140%
+Epoch  60 -> Test Accuracy: 87.430%
+NEW BEST -> 87.430% - Model saved!
+Epoch  70 -> Test Accuracy: 89.800%
+NEW BEST -> 89.800% - Model saved!
+Epoch  80 -> Test Accuracy: 90.700%
+NEW BEST -> 90.700% - Model saved!
+Epoch  90 -> Test Accuracy: 91.110%
+NEW BEST -> 91.110% - Model saved!
+Epoch 100 -> Test Accuracy: 91.120%
+NEW BEST -> 91.120% - Model saved!
+
+============================================================
+FINAL RESULT: M5_pruned_20p Best Test Accuracy: 91.120%
+============================================================

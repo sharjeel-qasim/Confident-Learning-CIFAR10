@@ -1,0 +1,23 @@
+--- Starting Training: M8_pruned_40p (Type: pruned, Noise: 40%) ---
+Training on 39963 examples.
+Epoch  10 -> Test Accuracy: 71.490%
+NEW BEST -> 71.490% - Model saved!
+Epoch  20 -> Test Accuracy: 76.960%
+NEW BEST -> 76.960% - Model saved!
+Epoch  30 -> Test Accuracy: 77.840%
+NEW BEST -> 77.840% - Model saved!
+Epoch  40 -> Test Accuracy: 80.440%
+NEW BEST -> 80.440% - Model saved!
+Epoch  50 -> Test Accuracy: 83.510%
+NEW BEST -> 83.510% - Model saved!
+Epoch  60 -> Test Accuracy: 82.620%
+Epoch  70 -> Test Accuracy: 82.890%
+Epoch  80 -> Test Accuracy: 82.890%
+Epoch  90 -> Test Accuracy: 84.160%
+NEW BEST -> 84.160% - Model saved!
+Epoch 100 -> Test Accuracy: 84.520%
+NEW BEST -> 84.520% - Model saved!
+
+============================================================
+FINAL RESULT: M8_pruned_40p Best Test Accuracy: 84.520%
+============================================================

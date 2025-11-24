@@ -1,0 +1,10 @@
+--- Starting Training: M7_baseline_40p (Type: baseline, Noise: 40%) ---
+Training on 50000 examples.
+Epoch  10 -> Test Accuracy: 73.020%
+NEW BEST -> 73.020% - Model saved!
+Epoch  20 -> Test Accuracy: 81.640%
+NEW BEST -> 81.640% - Model saved!
+Epoch  30 -> Test Accuracy: 83.600%
+NEW BEST -> 83.600% - Model saved!
+Epoch  40 -> Test Accuracy: 84.530%
+NEW BEST -> 84.530% - Model saved!

@@ -1,0 +1,2 @@
+--- Starting Training: M9_corrected_40p (Type: corrected, Noise: 40%) ---
+Training on 50000 examples.
