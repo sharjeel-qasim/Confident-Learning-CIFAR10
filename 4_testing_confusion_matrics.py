@@ -12,12 +12,10 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 
-# ==================== SETTINGS ====================
-MODEL_PATH = "./cl_results/final_models/M6_corrected_20p_best.pth"   # ← CHANGE ONLY THIS
+MODEL_PATH = "./cl_results/final_models/M6_corrected_20p_best.pth"  
 BATCH_SIZE = 256
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {DEVICE}")
-# ================================================
 
 if __name__ == '__main__':
 
@@ -35,15 +33,12 @@ if __name__ == '__main__':
     classes = ('plane', 'car', 'bird', 'cat', 'deer',
                'dog', 'frog', 'horse', 'ship', 'truck')
 
-    # === Exact same ResNet-18 as you used (but from torchvision) ===
     model = models.resnet18(pretrained=False, num_classes=10)
-    # Apply the two CIFAR-10 modifications you had in your original code
     model.conv1 = nn.Conv2d(3, 64, kernel_size=3, stride=1, padding=1, bias=False)
     model.maxpool = nn.Identity()
 
     model.to(DEVICE)
 
-    # === Load your saved weights (100% compatible) ===
     if not os.path.exists(MODEL_PATH):
         raise FileNotFoundError(f"Model not found: {MODEL_PATH}")
 
@@ -52,7 +47,6 @@ if __name__ == '__main__':
     model.eval()
     print(f"Loaded: {MODEL_PATH}")
 
-    # === Evaluation ===
     all_preds = []
     all_labels = []
 
@@ -67,14 +61,12 @@ if __name__ == '__main__':
     all_preds = np.array(all_preds)
     all_labels = np.array(all_labels)
 
-    # === Results ===
     accuracy = accuracy_score(all_labels, all_preds)
     print(f"\nTEST ACCURACY: {accuracy*100:.3f}%\n")
 
     print("Per-class metrics:")
     print(classification_report(all_labels, all_preds, target_names=classes, digits=4))
 
-    # === Confusion Matrix ===
     cm = confusion_matrix(all_labels, all_preds)
 
     plt.figure(figsize=(10, 8))

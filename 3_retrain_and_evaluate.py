@@ -10,10 +10,10 @@ import matplotlib.pyplot as plt
 from tqdm import tqdm
 from copy import deepcopy
 
-# --- Configuration ---
 BASE_DIR = 'cl_results'
 INPUT_DATA_DIR = os.path.join(BASE_DIR, 'prepared_data')
 RESULTS_DIR = os.path.join(BASE_DIR, 'final_models')
+
 # Ensure results directory exists
 os.makedirs(RESULTS_DIR, exist_ok=True) 
 
@@ -21,23 +21,21 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 NUM_EPOCHS = 100 # Final training duration
 NUM_CLASSES = 10
 
-# --- 🎯 THE MASTER LIST OF ALL 9 MODELS TO TRAIN ---
+# 9 MODELS TO TRAIN ---
 MODELS_TO_RUN = [
-    # 0% Noise (Base Level Comparison)
+    # 0% Noise
     {'name': 'M1_baseline_0p', 'type': 'baseline', 'noise': 0},
     {'name': 'M2_pruned_0p',   'type': 'pruned',   'noise': 0},
     {'name': 'M3_corrected_0p','type': 'corrected','noise': 0},
-    # 20% Noise (Core Comparison)
+    # 20% Noise
     {'name': 'M4_baseline_20p', 'type': 'baseline', 'noise': 20},
     {'name': 'M5_pruned_20p',   'type': 'pruned',   'noise': 20},
     {'name': 'M6_corrected_20p','type': 'corrected','noise': 20},
-    # 40% Noise (High Noise Comparison)
+    # 40% Noise
     {'name': 'M7_baseline_40p', 'type': 'baseline', 'noise': 40},
     {'name': 'M8_pruned_40p',   'type': 'pruned',   'noise': 40},
     {'name': 'M9_corrected_40p','type': 'corrected','noise': 40},
 ]
-
-# --- Model & Data Utilities ---
 
 def create_model():
     """Initializes a ResNet-18 model configured for CIFAR-10."""
@@ -58,7 +56,6 @@ def load_prepared_data(data_type, noise_level):
     ])
     full_trainset = torchvision.datasets.CIFAR10(root='./data', train=True, download=False, transform=transform)
     
-    # Logic to select the correct label and index files
     if data_type == 'baseline':
         label_file = f'noisy_labels_{noise_prefix}.npy'
         indices = np.arange(len(full_trainset))
@@ -97,7 +94,6 @@ def plot_learning_curve(model_name, epochs, test_accs):
     print(f"Learning curve saved: {plot_path}")
 
 
-# --- Main Training Function ---
 def train_and_eval(model_config):
     
     model_name = model_config['name']
@@ -107,7 +103,6 @@ def train_and_eval(model_config):
     log_path = os.path.join(RESULTS_DIR, f"{model_name}_log.txt")
     final_output_path = os.path.join(RESULTS_DIR, f"{model_name}_FINAL_ACCURACY.txt")
 
-    # Checkpoint: Skip if the final output file already exists
     if os.path.exists(final_output_path):
         print(f"Skipping {model_name}: Already completed.")
         return
@@ -140,11 +135,9 @@ def train_and_eval(model_config):
     epoch_history = []
     test_acc_history = []
 
-    # 3. Training Loop
     for epoch in tqdm(range(NUM_EPOCHS), desc=f"{model_name} Training"):
         net.train()
         
-        # --- Training Iteration ---
         for inputs, targets in trainloader:
              inputs, targets = inputs.to(DEVICE), targets.to(DEVICE)
              optimizer.zero_grad()
@@ -152,11 +145,9 @@ def train_and_eval(model_config):
              loss = criterion(outputs, targets)
              loss.backward()
              optimizer.step()
-        # --- End Training Iteration ---
         
         scheduler.step()
 
-        # 4. Evaluation (Every 10 epochs on the CLEAN test set)
         if (epoch + 1) % 10 == 0 or epoch == NUM_EPOCHS - 1:
             net.eval()
             correct = 0; total = 0
@@ -184,12 +175,10 @@ def train_and_eval(model_config):
     log(f"FINAL RESULT: {model_name} Best Test Accuracy: {best_acc:.3f}%")
     log("="*60)
     
-    # 🌟 CRITICAL CHECKPOINT: Save final accuracy to a marker file
     with open(final_output_path, 'w') as f:
         f.write(f"{best_acc:.3f}")
 
 
-# --- SEQUENTIAL EXECUTION START ---
 if __name__ == '__main__':
     
     all_results = {}
@@ -198,7 +187,6 @@ if __name__ == '__main__':
     print(f"Total Epochs per Model: {NUM_EPOCHS} | Device: {DEVICE}")
     print("="*80)
     
-    # Loop through the master list of models
     for config in MODELS_TO_RUN:
         try:
             train_and_eval(config)
@@ -207,12 +195,12 @@ if __name__ == '__main__':
             print(f"\n--- FATAL ERROR: Data files missing for {config['name']} ---")
             print("Please ensure Step 1 and Step 2 completed successfully and check the path.")
             print(e)
-            break # Stop if data files are missing
+            break
         except Exception as e:
             print(f"\n--- CRITICAL ERROR during training model {config['name']} ---")
             print(f"Error: {e}")
             print("Skipping to next model (check logs for details)...")
-            continue # Continue to the next model if one fails
+            continue
     
     print("\n" + "="*60)
     print("ALL SEQUENTIAL TRAINING JOBS FINISHED.")
