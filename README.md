@@ -37,7 +37,7 @@ The pipeline consists of **three sequential steps**:
 | `1_generate_inputs_cv.py` | **Step 1: Input Generation** | Runs **4-Fold CV** to generate unbiased predicted probabilities \( \hat{P}_{k,i} \). |
 | `2_detect_and_prepare_data.py` | **Step 2: Cleaning & Logging** | Performs CL, logs detected errors, and creates final datasets. |
 | `3_sequential_training.py` | **Step 3: Final Evaluation** | Trains 9 models for **100 epochs** each with checkpointing. |
-| `4_plot_sample_image.py` | Visualization Tool | Produces sample images of top detected label errors. |
+| `4_testing_confusion_matrics.py` | **Step 4: Confusion Matrix** | Produces confusion matrixes using testing data and saved models |
 | `cl_results/` | Output Directory | Contains saved models, logs, metrics, and cleaned datasets. |
 
 ---
